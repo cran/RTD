@@ -1,30 +1,42 @@
 # RTD
 
-[![Travis build status](https://travis-ci.org/chezou/RTD.svg?branch=master)](https://travis-ci.org/chezou/RTD)
+![R-CMD-check](https://github.com/treasure-data/RTD/workflows/R-CMD-check/badge.svg)
 
 RTD is an official R client for Arm Treasure Data. It aims to make it simple to handle or connect from R to TD.
 
-Since RTD covers only basic execution on TD, we recommend to use RPresto or RJDBC for querying.
+Since RTD covers only basic execution on TD, we recommend to use [RPresto](https://github.com/prestodb/RPresto) or RJDBC for querying.
 
 ## Requirements
 
-To upload data.frame from R, ensure you've installed embulk and set PATH for it.
+To upload data.frame from R, there are two options:
+
+1. embulk
+2. bulk-import
+
+If you want to use embulk, ensure you've installed embulk and set PATH for it.
 
 - [embulk](https://www.embulk.org/)
 - [embulk-output-td](https://github.com/treasure-data/embulk-output-td)
 
+
 ## Install
 
-You can install via `devtools::install_github`.
+You can install via `devtools::install_github` for the latest development version.
 
 ```R
 install.packages("devtools") # Install devtools if needed
-devtools::install_github("chezou/RTD")
+devtools::install_github("treasure-data/RTD@v0.4.0")
+```
+
+Or, you can use install-github.me instead like:
+
+```R
+source("https://install-github.me/treasure-data/RTD@v0.4.0")
 ```
 
 ## Example
 
-See also [RTD_example.Rmd](./RTD_example.Rmd) or [RPubs](https://rpubs.com/chezou/TD-from-RPresto-RTD).
+See also [RTD_example.Rmd](https://github.com/treasure-data/RTD/blob/master/RTD_example.Rmd) or [RPubs](https://rpubs.com/chezou/TD-from-RPresto-RTD).
 
 ```R
 library(RTD)
